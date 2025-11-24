@@ -104,7 +104,7 @@
 <script>
 // Dữ liệu thành viên
 const members = [
-  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:null, bg:null},
+  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'https://www.google.com/imgres?imgurl=https://jbagy.me/wp-content/uploads/2025/03/anh-avatar-facebook-vo-tri-cute-5.jpg&imgrefurl=https://jbagy.me/avatar-vo-tri-cute/?srsltid%3DAfmBOopUSE0qvbWLY3d-SBkmyru6vn_rgPf3eAJ1Nlb4BYr9mnFodi5i&h=651&w=690&tbnid=ILqSVyCaZ4z0-M&source=sa.im&usg=AI4_-kQ_q75nchQyfuTxEItf2_8hrusu4Q&vet=1&docid=3UCpOs3lQcf5WM', bg:null},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:null, bg:null},
   {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:null, bg:null},
   {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:null, bg:null},
