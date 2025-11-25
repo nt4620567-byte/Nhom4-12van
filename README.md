@@ -104,7 +104,7 @@
 <script>
 // Dữ liệu thành viên
 const members = [
-  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'img/![Uploading image.png…]()'
+  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'[img/![Uploading image.png…]()](https://drive.google.com/file/d/17nVpTojXklZrVu1TrN0ZAIwygWDRciOR/view?usp=drivesdk)'
 , bg:null},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:null, bg:null},
   {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:null, bg:null},
