@@ -133,10 +133,10 @@ members.forEach(m=>{
 const links = [
   {title:'Bài 7', href:'https://docs.google.com/document/d/1m_pAeJTqHiUTKwysgXKJ3bCzX8lwi2Yv1XZQs52rP88/edit?usp=drivesdk'},
   {title:'Bài 8', href:'https://docs.google.com/document/d/1MrnnoU4JN_IzSy4xH1nbMDgYQD1JE3fLebK19yrAiR8/edit?usp=drivesdk'},
-  {title:'Bài 9', href:'https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1FTtAe2Iq_p9j4Z45Em5o9oa_pmdBA1fSOLckO9ltf7I%2Fedit%3Fusp%3Dsharing%26fbclid%3DIwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNDM3NjI2MzE2OTczNzg4AAEeo-ngAz-2OtmGyJjNQqtmuf2ulCWTH_HGC9QpV7tEe_uJW30CuuC4LMVXLxs_aem_augOwywBc45_f0rqyJPU2g&h=AT2BX2pISS2BLNEPkyYDEFZc6Qb1Eo4LLIU8xZx77TLQGP97fyNAIUMSvF0W2u16ldCD82oARVam2FT79dANWSfW_6n4x9uHwe1EBXawb01pncZf2ZzTNggzYHO7RGE&s=1'},
-  {title:'Bài 10', href:'https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F17cf397J36QDESuapkWCTt8-URsjQ4KTPS0GA-4v0QHU%2Fedit%3Fusp%3Ddrivesdk%26fbclid%3DIwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNDM3NjI2MzE2OTczNzg4AAEes1d0roh0GyjW0GcTNH5NSI1y3zhWe1hsp17DqRpA8e7bbSbjOGrX8AJk9o8_aem_SbjN9PRt-sJBAfKOnosvsA&h=AT3-3zaCGwOCtB2kE__rFsH99HotAS5WHhoG5BnReEfKTyk0p1W5lIlAsg_diVCkW_CMiehYj-GLJfFZuo83q2yrhRcSlNAeJT-jN2VOboBuFXh-_c2sGWzlcVE9exY&s=1'},
+  {title:'Bài 9', href:'https://docs.google.com/document/d/1FTtAe2Iq_p9j4Z45Em5o9oa_pmdBA1fSOLckO9ltf7I/edit?usp=drivesdk'},
+  {title:'Bài 10', href:'https://docs.google.com/document/d/17cf397J36QDESuapkWCTt8-URsjQ4KTPS0GA-4v0QHU/edit?usp=drivesdk'},
   {title:'Bài 11',href:'#'},
-  {title:'Bài 12',href:'https://l.facebook.com/l.php?u=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F13vb090tUJtHBMC0W6Ib7LANkDbnA5mFGVnMKD1hAOqw%2Fedit%3Fusp%3Ddrivesdk%26fbclid%3DIwZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNDM3NjI2MzE2OTczNzg4AAEecV2jj8tYKHydh2qOSEBDlwuCAZ4F2SNYkdy6xUGpXULx-75qptthl4P_ibk_aem_LkAIm77x1ygNPpFVZUd3oA&h=AT1t5pG3I92ItjMx7YAW0UVqQhUW-6Nom-ryYJRqNe91LKtKpNJCAXYA1rMw9w1NbTWpMJlHfuRjpBWoaOBzqw3kxR7W3H1XODWH09fMMg-zecugYOPeLDpUccuQTxs&s=1'}
+  {title:'Bài 12',href:'https://docs.google.com/document/d/13vb090tUJtHBMC0W6Ib7LANkDbnA5mFGVnMKD1hAOqw/edit?usp=drivesdk'}
 ];
 const linksEl = document.getElementById('links');
 links.forEach(l=>{
