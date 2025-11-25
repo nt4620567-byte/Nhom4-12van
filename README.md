@@ -135,7 +135,7 @@ const links = [
   {title:'Bài 8', href:'https://docs.google.com/document/d/1MrnnoU4JN_IzSy4xH1nbMDgYQD1JE3fLebK19yrAiR8/edit?usp=drivesdk'},
   {title:'Bài 9', href:'https://docs.google.com/document/d/1FTtAe2Iq_p9j4Z45Em5o9oa_pmdBA1fSOLckO9ltf7I/edit?usp=drivesdk'},
   {title:'Bài 10', href:'https://docs.google.com/document/d/17cf397J36QDESuapkWCTt8-URsjQ4KTPS0GA-4v0QHU/edit?usp=drivesdk'},
-  {title:'Bài 11',href:'#'},
+  {title:'Bài 11',href:'https://docs.google.com/document/d/11w6pyc9h3xqF6wHZlIJ2K9O7fVp22r7-esO0zK-Ziiw/edit?usp=drivesdk'},
   {title:'Bài 12',href:'https://docs.google.com/document/d/13vb090tUJtHBMC0W6Ib7LANkDbnA5mFGVnMKD1hAOqw/edit?usp=drivesdk'}
 ];
 const linksEl = document.getElementById('links');
