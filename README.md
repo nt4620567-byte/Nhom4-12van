@@ -103,13 +103,106 @@
 
 <script>
 // Dữ liệu thành viên
+<style>
+/* Tiêu đề */
+#wp-products h1 {
+    text-align:center;
+    color:#243b9a;
+    padding: 0 30px;
+    margin-top: 40px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* Container */
+.container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Khung thẻ */
+.card {
+    width: 330px;
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Avatar */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Tên */
+.card a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a365f;
+}
+</style>
+
+
+<!-- Tiêu đề -->
+<div id="wp-products">
+  <h1>THÀNH VIÊN</h1>
+</div>
+
+<!-- Khung chứa thẻ -->
+<div class="container" id="member-container"></div>
+
+
+<script>
+// Dữ liệu thành viên
 const members = [
-  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'[img/![Uploading image.png…]()](https://drive.google.com/file/d/17nVpTojXklZrVu1TrN0ZAIwygWDRciOR/view?usp=drivesdk)'
-, bg:null},
-  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:null, bg:null},
-  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:null, bg:null},
-  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:null, bg:null},
-  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:null, bg:null}
+  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎',
+   photo:"Đăng Thư.png" class="avatar">, bg:null},
+
+  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨',
+   photo:"Yến Như.png" class="avatar">, bg:null},
+
+  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨',
+   photo:"Quế Anh.png" class="avatar">, bg:null},
+
+  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝',
+   photo:"Ngọc Châu.png" class="avatar">, bg:null},
+
+  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻',
+   photo:"Quốc Việt.png" class="avatar">, bg:null}
+];
+
+// Avatar mặc định nếu không có ảnh
+const defaultAvatar = "https://cdn-icons-png.flaticon.com/512/6858/6858504.png";
+
+
+// Tạo giao diện
+const container = document.getElementById("member-container");
+
+members.forEach(mem => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+      <img src="${mem.photo ? mem.photo : defaultAvatar}" class="avatar">
+      <a href="#" target="_blank">${mem.name}</a>
+  `;
+
+  container.appendChild(card);
+});
+</script>
 ];
 
 const membersEl = document.getElementById('members');
