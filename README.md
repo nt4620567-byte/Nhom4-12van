@@ -104,8 +104,8 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
 <script>
 // Dữ liệu thành viên
 const members = [
-  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'[img/![Uploading image.png…]()](https://drive.google.com/file/d/17nVpTojXklZrVu1TrN0ZAIwygWDRciOR/view?usp=drivesdk)'
-, bg:null},
+  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png'
+, bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-ng-Th-/'},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:null, bg:null},
   {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:null, bg:null},
   {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:null, bg:null},
@@ -125,6 +125,7 @@ members.forEach(m=>{
       <h3>${m.name}</h3>
       <p class="mc-role">Lớp ${m.cls}</p>
       <p class="mc-about">${m.about}</p>
+      ${m.link ? `<p class="mc-link"><a href="${m.link}" target="_blank">Xem giới thiệu</a></p>` : ''}
     </div>`;
   membersEl.appendChild(card);
 });
