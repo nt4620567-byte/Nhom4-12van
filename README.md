@@ -106,10 +106,10 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
 const members = [
   {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png'
 , bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-ng-Th-/'},
-  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:null, bg:null},
-  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:null, bg:null},
-  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:null, bg:null},
-  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:null, bg:null}
+  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://github.com/nt4620567-byte/Ynu.git'},
+  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null},
+  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null},
+  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null}
 ];
 
 const membersEl = document.getElementById('members');
