@@ -1,11 +1,11 @@
 <!-- Banner -->
 <p align="center">
-  <img src="<img width="2160" height="3358" alt="Image" src="https://github.com/user-attachments/assets/a8c444ba-1b81-4974-a8f7-8a5d2b3acfd7" />" width="100%" />
+  <img src="https://github.com/user-attachments/assets/a8c444ba-1b81-4974-a8f7-8a5d2b3acfd7" />" alt:"background" width="100%" />
 </p>
 
 <!-- Avatar -->
 <p align="center">
-  <img src="<img width="2160" height="3358" alt="Image" src="https://github.com/user-attachments/assets/a8c444ba-1b81-4974-a8f7-8a5d2b3acfd7" />" alt="avatar" width="150" style="border-radius: 50%;" />
+  <img src="https://github.com/user-attachments/assets/a8c444ba-1b81-4974-a8f7-8a5d2b3acfd7" />" alt="avatar" width="150" style="border-radius: 50%;" />
 </p>
 
 <h1 align="center">Hi, I'm NAME 👋</h1>
