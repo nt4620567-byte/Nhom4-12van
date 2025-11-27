@@ -105,9 +105,9 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
 // Dữ liệu thành viên
 const members = [
   {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png'
-, bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-ng-Th-/'},
-  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://github.com/nt4620567-byte/Ynu.git'},
-  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null},
+, bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#nguy%E1%BB%85n-hu%E1%BB%B3nh-%C4%91%C4%83ng-th%C6%B0)'},
+  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://nt4620567-byte.github.io/Nhu/'},
+  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null, link:'https://queanh1101.github.io/?fbclid=IwY2xjawOUvtNleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeFYHZGANO5KiF_O6YGYBwxy-LGyBo6bXoO9XoluntMUQhJ1k2_fQcDysjA-4_aem_pd8UC9f5Ij7vgOjlTh62Iw'},
   {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null},
   {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null}
 ];
