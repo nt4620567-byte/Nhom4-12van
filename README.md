@@ -11,23 +11,25 @@
   }
   *{box-sizing:border-box;}
   body{
-    margin:0;
+   margin:0;
     font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
 
-    /* NỀN HÌNH ẢNH */
-    background: url('N.jpg') no-repeat center/cover;
-    
-    color:#0b1220;
+    /* NỀN GALAXY CHUYỂN ĐỘNG */
+    background: linear-gradient(135deg,#1a0033,#000814,#001d3d,#003566);
+    background-size: 400% 400%;
+    animation: galaxyMove 18s ease infinite;
+
+    color:#e2e8f0;
     padding:20px;
     display:flex;
     justify-content:center;
-  }
+}
 
-  @keyframes gradientMove {
+@keyframes galaxyMove {
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
-  }
+}
   .wrap{width:100%; max-width:var(--maxw);}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
   .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
