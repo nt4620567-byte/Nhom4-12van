@@ -11,9 +11,23 @@
   }
   *{box-sizing:border-box;}
   body{
-    margin:0; font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    background: linear-gradient(180deg,var(--bg),#e6eefb);
-    color:#0b1220; padding:20px; display:flex; justify-content:center;
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+
+    color:#0b1220;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+  }
+
+  @keyframes gradientMove {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
   }
   .wrap{width:100%; max-width:var(--maxw);}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
@@ -109,7 +123,7 @@ const members = [
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://nt4620567-byte.github.io/Nhu/'},
   {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null, link:'https://queanh1101.github.io/?fbclid=IwY2xjawOVJc1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEe6KPzVMA6ST_8xoNKXu2JNFufc6xYh2M2Fcgp6T7oSZFM9BoTiqeziKBGZRc_aem_AajWgvWAWGfLCzvU1Ih32g'},
   {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null},
-  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null, link:'https://doquocviet52.github.io/doquocvietprofile.github.io/?fbclid=IwY2xjawOVJjhleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeNO_Bo75_GFnVcHz4orvBCUr4fAVDSZczRYBX0J7M0TNUFuhYmUMwlqVBSDI_aem_Vy7IgkPirPqPssNvjiF7sQ'}
+  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null, link:'https://doquocviet52.github.io/doquocvietprofile.github.io/?fbclid=IwY2xjawOVKgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEewdUjPPJw1ijSDik3-Lv62CkkQJhWC38JlMZtSOsIucfD2VBU6R0tJw7S76Y_aem_-98vN5RGqQRYOUpVvBzi7g'}
 ];
 
 const membersEl = document.getElementById('members');
