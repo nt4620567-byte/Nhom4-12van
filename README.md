@@ -14,10 +14,9 @@
     margin:0;
     font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
 
-    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
-    background-size: 400% 400%;
-    animation: gradientMove 12s ease infinite;
-
+    /* NỀN HÌNH ẢNH */
+    background: url('nền.jpg') no-repeat center/cover;
+    
     color:#0b1220;
     padding:20px;
     display:flex;
@@ -122,7 +121,7 @@ const members = [
 , bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#'},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://nt4620567-byte.github.io/Nhu/'},
   {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null, link:'https://queanh1101.github.io/?fbclid=IwY2xjawOVJc1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEe6KPzVMA6ST_8xoNKXu2JNFufc6xYh2M2Fcgp6T7oSZFM9BoTiqeziKBGZRc_aem_AajWgvWAWGfLCzvU1Ih32g'},
-  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null},
+  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null, link:'https://nguyenhuynhngocchau2508-ops.github.io/NHNC/?fbclid=IwY2xjawOVLk1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeFfOHuJNVmRf3QLHWyxgZQCsn4Kx1uV3a2mxtAJ3AZ8g9YM8ne01Pz2iwQJM_aem_sJB1QJRO_GChrvlmnLFIQg'},
   {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null, link:'https://doquocviet52.github.io/doquocvietprofile.github.io/?fbclid=IwY2xjawOVKgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEewdUjPPJw1ijSDik3-Lv62CkkQJhWC38JlMZtSOsIucfD2VBU6R0tJw7S76Y_aem_-98vN5RGqQRYOUpVvBzi7g'}
 ];
 
