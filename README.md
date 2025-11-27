@@ -15,7 +15,7 @@
     font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
 
     /* NỀN HÌNH ẢNH */
-    background: url('nền.jpg') no-repeat center/cover;
+    background: url('N.jpg') no-repeat center/cover;
     
     color:#0b1220;
     padding:20px;
