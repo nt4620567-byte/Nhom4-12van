@@ -105,9 +105,9 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
 // Dữ liệu thành viên
 const members = [
   {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png'
-, bg:null, link:'(https://dangthunguyenhuynh43-ui.github.io/-thuw/#nguy%E1%BB%85n-hu%E1%BB%B3nh-%C4%91%C4%83ng-th%C6%B0)'},
+, bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#nguy%E1%BB%85n-hu%E1%BB%B3nh-%C4%91%C4%83ng-th%C6%B0'},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://nt4620567-byte.github.io/Nhu/'},
-  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null, link:'(https://l.messenger.com/l.php?u=https%3A%2F%2Fqueanh1101.github.io%2F&h=AT0whQyVM4M7kt-ixusf9UypLnq2ywSnjkWiRUfz_a1s_FyA4ujMgM8RHS95BayKEqQMfy4_6GT1BME5F65s6pFEoUwr2ejSSASDarb4jRAKQZCqq865n0LKyWX1-GoetJ03E45Q6SVmGrvjyQWPJQ)'},
+  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null, link:'https://l.messenger.com/l.php?u=https%3A%2F%2Fqueanh1101.github.io%2F&h=AT0whQyVM4M7kt-ixusf9UypLnq2ywSnjkWiRUfz_a1s_FyA4ujMgM8RHS95BayKEqQMfy4_6GT1BME5F65s6pFEoUwr2ejSSASDarb4jRAKQZCqq865n0LKyWX1-GoetJ03E45Q6SVmGrvjyQWPJQ'},
   {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null},
   {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null}
 ];
