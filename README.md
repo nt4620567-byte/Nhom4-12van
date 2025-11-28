@@ -11,24 +11,17 @@
   }
   *{box-sizing:border-box;}
   body{
-   margin:0;
-    font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
 
-    /* NỀN GALAXY CHUYỂN ĐỘNG */
-    background: linear-gradient(135deg,#1a0033,#000814,#001d3d,#003566);
-    background-size: 400% 400%;
-    animation: galaxyMove 18s ease infinite;
+  /* --- NỀN HÌNH ẢNH FULL HD --- */
+  background: url("ten-hinh-cua-ban.jpg") no-repeat center center fixed;
+  background-size: cover;
 
-    color:#e2e8f0;
-    padding:20px;
-    display:flex;
-    justify-content:center;
-}
-
-@keyframes galaxyMove {
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+  color:#e2e8f0;
+  padding:20px;
+  display:flex;
+  justify-content:center;
 }
   .wrap{width:100%; max-width:var(--maxw);}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
