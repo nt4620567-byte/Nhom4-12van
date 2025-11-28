@@ -42,6 +42,14 @@
   .mc-content h3{margin:0;font-size:18px;}
   .mc-content .mc-role{font-size:14px;}
   .mc-content .mc-about{font-size:14px;margin-top:6px;}
+  /* --- ĐỔI MÀU CHỮ TRONG 3 KHUÔN XANH --- */
+.member-card,
+.member-card .mc-content h3,
+.member-card .mc-role,
+.member-card .mc-about,
+.member-card .mc-link a {
+    color: #0a1f2b !important; /* xanh đen */
+} 
 
   .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06);}
   .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
