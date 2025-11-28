@@ -5,7 +5,7 @@
 <title>Nhóm 4 - Bài tập & Thành viên</title>
 <style>
   :root{
-    --accent:#60a5fa; --bg:#f5f8ff; --card:#ffde7; --muted:#000; --radius:14px; --maxw:980px;
+    --accent:#60a5fa; --bg:#f5f8ff; --card:#ffd6e7; --muted:#000; --radius:14px; --maxw:980px;
   }
   *{box-sizing:border-box;}
   body{
