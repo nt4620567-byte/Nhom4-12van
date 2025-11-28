@@ -1,5 +1,3 @@
-# Nhom4-12van
-<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +5,7 @@
 <title>Nhóm 4 - Bài tập & Thành viên</title>
 <style>
   :root{
-    --accent:#60a5fa; --bg:#f5f8ff; --card:#ffffff; --muted:#475569; --radius:14px; --maxw:980px;
+    --accent:#60a5fa; --bg:#f5f8ff; --card:#000000; --muted:#475569; --radius:14px; --maxw:980px;
   }
   *{box-sizing:border-box;}
   body{
