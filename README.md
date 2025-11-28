@@ -42,16 +42,12 @@
   .mc-content h3{margin:0;font-size:18px;}
   .mc-content .mc-role{font-size:14px;}
   .mc-content .mc-about{font-size:14px;margin-top:6px;}
-  /* --- ĐỔI MÀU CHỮ TRONG 3 KHUÔN XANH --- */
-.member-card,
-.member-card .mc-content h3,
-.member-card .mc-role,
-.member-card .mc-about,
-.member-card .mc-link a {
-    color: #0a1f2b !important; /* xanh đen */
-} 
-
+ 
   .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06);}
+  /* Đổi màu chữ trong khung xanh nhạt */
+.card {
+    color: #003a65 !important; /* xanh đậm */
+} 
   .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
   .members{display:flex; flex-direction:column; gap:12px;}
   .list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
