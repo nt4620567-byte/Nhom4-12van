@@ -15,7 +15,7 @@
   font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
 
   /* --- NỀN HÌNH ẢNH FULL HD --- */
-  background: url("ten-hinh-cua-ban.jpg") no-repeat center center fixed;
+  background: url("https://github.com/user-attachments/assets/ef70f834-1169-4741-8e8c-10a0b1650724") no-repeat center center fixed;
   background-size: cover;
 
   color:#e2e8f0;
