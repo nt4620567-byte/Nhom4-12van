@@ -58,7 +58,7 @@
   }
   form textarea{min-height:86px;resize:vertical;}
 button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04202a; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;}
-  .footer-note{color:var(--muted); font-size:13px; margin-top:12px;}
+  .footer-note{color:#000; font-size:13px; margin-top:12px;}
 </style>
 </head>
 <body>
@@ -104,7 +104,7 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
       </div>
     </aside>
   </main>
-  <footer style="margin-top:22px; text-align:center; color:var(--muted)">© Nhóm 4 • Demo Web</footer>
+  <footer style="margin-top:22px; text-align:center; color:#000">© Nhóm 4 • Demo Web</footer>
 </div>
 
 <script>
