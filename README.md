@@ -12,16 +12,67 @@
   margin:0;
   font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
 
-  /* --- NỀN HÌNH ẢNH FULL HD --- */
   background: url("https://github.com/user-attachments/assets/ef70f834-1169-4741-8e8c-10a0b1650724") no-repeat center center fixed;
   background-size: cover;
 
   color:#e2e8f0;
   padding:20px;
   display:flex;
-  justify-content:center;
+  flex-direction:column;
+  align-items:center;
 }
-  .wrap{width:100%; max-width:var(--maxw);}
+
+/* ================= NAVIGATION BAR ================= */
+.navbar{
+  width:100%;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(5px);
+  position:sticky;
+  top:0;
+  z-index:999;
+  padding:10px 0;
+}
+.footer-nav{
+  margin-top:20px;
+  position:static;
+}
+.nav-container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 20px;
+}
+.nav-logo{
+  font-size:20px;
+  font-weight:700;
+  color:white;
+  text-decoration:none;
+}
+.nav-links{
+  display:flex;
+  gap:18px;
+}
+.nav-links a{
+  color:#e2e8f0;
+  text-decoration:none;
+  font-weight:500;
+  padding:6px 10px;
+  border-radius:6px;
+  transition:0.25s;
+}
+.nav-links a:hover{
+  background:rgba(255,255,255,0.16);
+}
+@media(max-width:700px){
+  .nav-links{
+    gap:10px; flex-wrap:wrap; justify-content:flex-end;
+  }
+}
+/* ================================================== */
+
+  .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
   .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
         display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
@@ -31,10 +82,9 @@
   .grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
   @media(max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:-1}}
 
-  /* CARD THÀNH VIÊN */
   .member-card{
     display:flex; gap:16px; background:#60a5fa; border-radius:16px;
-    padding:18px; margin-bottom:20px; color:#fff; background-size:cover; background-position:center;
+    padding:18px; margin-bottom:20px; color:#fff;
   }
   .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
   .mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
@@ -43,18 +93,17 @@
   .mc-content .mc-role{font-size:14px;}
   .mc-content .mc-about{font-size:14px;margin-top:6px;}
  
-  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06);}
-  /* Đổi màu chữ trong khung xanh nhạt */
-.card {
-    color: #003a65 !important; /* xanh đậm */
-} 
+  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
+  
   .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
   .members{display:flex; flex-direction:column; gap:12px;}
   .list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-  .link-btn{display:flex;align-items:center;gap:10px;padding:10px 12px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:10px; text-decoration:none; color:inherit; border:1px solid rgba(255,255,255,0.03);}
-  .link-btn small{color:var(--muted);}
+  
+  .link-btn{
+    display:flex;align-items:center;gap:10px;padding:10px 12px;
+    background:rgba(255,255,255,0.1);
+    border-radius:10px; text-decoration:none; color:inherit;
+  }
   .sidebar .card + .card{margin-top:14px;}
   form .row{display:flex; gap:8px;margin-bottom:10px;}
   form input[type=text],form input[type=email],form textarea,form select{
@@ -62,10 +111,25 @@
   }
   form textarea{min-height:86px;resize:vertical;}
 button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04202a; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;}
-  .footer-note{color:#000; font-size:13px; margin-top:12px;}
 </style>
 </head>
 <body>
+
+<!-- ================= NAVBAR TRÊN ================= -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">Nhóm 4</a>
+    <div class="nav-links">
+      <a href="#">Trang chủ</a>
+      <a href="#members">Thành viên</a>
+      <a href="#links">Bài tập</a>
+      <a href="#contactForm">Gửi ý kiến</a>
+      <a href="#">Giới thiệu</a>
+    </div>
+  </div>
+</nav>
+<!-- ================================================= -->
+
 <div class="wrap">
   <header>
     <div class="logo">G4</div>
@@ -108,6 +172,7 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
       </div>
     </aside>
   </main>
+
   <footer style="margin-top:22px; text-align:center; color:#000">© Nhóm 4 • Demo Web</footer>
 </div>
 
@@ -126,7 +191,6 @@ const membersEl = document.getElementById('members');
 members.forEach(m=>{
   const card = document.createElement('div');
   card.className='member-card';
-  if(m.bg) card.style.backgroundImage=`url(${m.bg})`;
   const avatarHTML = m.photo ? `<img class="mc-avatar-img" src="${m.photo}" alt="${m.name}">` :
 `<div class="mc-avatar">${m.name.split(' ').slice(-1)[0][0]}${m.name.split(' ')[0][0]}</div>`;
   card.innerHTML = `
@@ -151,8 +215,11 @@ const links = [
 ];
 const linksEl = document.getElementById('links');
 links.forEach(l=>{
-  const a = document.createElement('a'); a.className='link-btn'; a.href=l.href; a.target='_blank';
-  a.innerHTML=`<div style="width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;font-weight:700">${l.title.split(' ')[1]||l.title}</div>
+  const a = document.createElement('a'); 
+  a.className='link-btn'; 
+  a.href=l.href; 
+  a.target='_blank';
+  a.innerHTML=`<div style="width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700">${l.title.split(' ')[1]||l.title}</div>
     <div><div style="font-weight:600">${l.title}</div><small>Mở liên kết</small></div>`;
   linksEl.appendChild(a);
 });
@@ -170,5 +237,20 @@ function handleSubmit(e){
  return false;
 }
 </script>
+
+<!-- ================= NAVBAR DƯỚI ================= -->
+<nav class="navbar footer-nav">
+  <div class="nav-container">
+    <div class="nav-links">
+      <a href="#">Trang chủ</a>
+      <a href="#members">Thành viên</a>
+      <a href="#links">Bài tập</a>
+      <a href="#contactForm">Gửi ý kiến</a>
+      <a href="#">Giới thiệu</a>
+    </div>
+  </div>
+</nav>
+<!-- ================================================= -->
+
 </body>
 </html>
