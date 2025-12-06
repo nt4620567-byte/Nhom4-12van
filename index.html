@@ -19,8 +19,6 @@
     flex-direction:column;
     align-items:center;
   }
-
-  /* ================= NAVIGATION BAR ================= */
   .navbar{
     width:100%;
     background:rgba(0,0,0,0.55);
@@ -30,10 +28,7 @@
     z-index:999;
     padding:10px 0;
   }
-  .footer-nav{
-    margin-top:20px;
-    position:static;
-  }
+  .footer-nav{margin-top:20px;position:static;}
   .nav-container{
     max-width:var(--maxw);
     margin:0 auto;
@@ -42,43 +37,23 @@
     align-items:center;
     padding:0 20px;
   }
-  .nav-logo{
-    font-size:20px;
-    font-weight:700;
-    color:white;
-    text-decoration:none;
-  }
-  .nav-links{
-    display:flex;
-    gap:18px;
-  }
+  .nav-logo{font-size:20px;font-weight:700;color:white;text-decoration:none;}
+  .nav-links{display:flex;gap:18px;}
   .nav-links a{
-    color:#e2e8f0;
-    text-decoration:none;
-    font-weight:500;
-    padding:6px 10px;
-    border-radius:6px;
-    transition:0.25s;
+    color:#e2e8f0;text-decoration:none;font-weight:500;
+    padding:6px 10px;border-radius:6px;transition:0.25s;
   }
-  .nav-links a:hover{
-    background:rgba(255,255,255,0.16);
-  }
-  @media(max-width:700px){
-    .nav-links{
-      gap:10px; flex-wrap:wrap; justify-content:flex-end;
-    }
-  }
-
+  .nav-links a:hover{background:rgba(255,255,255,0.16);}
+  @media(max-width:700px){.nav-links{gap:10px; flex-wrap:wrap; justify-content:flex-end;}}
   .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
   .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
         display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
   h1{margin:0;font-size:26px;}
   p.lead{margin:4px 0 0;color:var(--muted);}
+  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* 1 cột vì form xuống cuối */
   
-  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* form xuống cuối nên chỉ 1 cột */
-  
-  /* ================== THÀNH VIÊN 3-2 ================== */
+  /* Thành viên 3-2 */
   .members{
     display:grid;
     grid-template-areas: 
@@ -102,21 +77,23 @@
     color:#fff;
     height:100%;
     width:280px;
+    text-decoration:none;
+    transition:0.3s;
   }
-
+  .member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    cursor:pointer;
+  }
   .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
   .mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
              display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
   .mc-content h3{margin:0;font-size:18px;}
   .mc-content .mc-role{font-size:14px;}
   .mc-content .mc-about{font-size:14px;margin-top:6px;}
- 
   .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
-  
   .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  
-  .list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-  
+  .list-links{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;}
   .link-btn{
     display:flex;align-items:center;gap:10px;padding:10px 12px;
     background:rgba(255,255,255,0.1);
@@ -132,7 +109,6 @@
 </head>
 <body>
 
-<!-- ================= NAVBAR TRÊN ================= -->
 <nav class="navbar">
   <div class="nav-container">
     <a href="#" class="nav-logo">Nhóm 4</a>
@@ -145,7 +121,6 @@
     </div>
   </div>
 </nav>
-<!-- ================================================= -->
 
 <div class="wrap">
   <header>
@@ -169,7 +144,7 @@
       <div class="list-links" id="links"></div>
     </div>
 
-    <!-- FORM GỬI Ý KIẾN XUỐNG CUỐI -->
+    <!-- FORM GỬI Ý KIẾN -->
     <div class="card">
       <div class="section-title"><h2>Form gửi ý kiến</h2></div>
       <form id="contactForm" onsubmit="return handleSubmit(event)">
@@ -201,29 +176,36 @@ const members = [
 
 const membersEl = document.getElementById('members');
 members.forEach((m)=>{
-  const card = document.createElement('div');
+  const card = document.createElement('a'); // card là link luôn
   card.className='member-card';
+  card.href = m.link || '#';
+  card.target = '_blank';
+  card.style.textDecoration='none';
+  card.style.color='inherit';
+
   const avatarHTML = m.photo ? `<img class="mc-avatar-img" src="${m.photo}" alt="${m.name}">` :
     `<div class="mc-avatar">${m.name.split(' ').slice(-1)[0][0]}${m.name.split(' ')[0][0]}</div>`;
+
   card.innerHTML = `
     ${avatarHTML}
     <div class="mc-content">
       <h3>${m.name}</h3>
       <p class="mc-role">Lớp ${m.cls}</p>
       <p class="mc-about">${m.about}</p>
-      ${m.link ? `<p class="mc-link"><a href="${m.link}" target="_blank">Xem giới thiệu</a></p>` : ''}
     </div>`;
   membersEl.appendChild(card);
 });
 
-// Dữ liệu bài tập
+// Dữ liệu bài tập, có thể thêm nhiều hơn
 const links = [
-  {title:'Bài 7', href:'https://docs.google.com/document/d/1m_pAeJTqHiUTKwysgXKJ3bCzX8lwi2Yv1XZQs52rP88/edit?usp=drivesdk'},
-  {title:'Bài 8', href:'https://docs.google.com/document/d/1MrnnoU4JN_IzSy4xH1nbMDgYQD1JE3fLebK19yrAiR8/edit?usp=drivesdk'},
-  {title:'Bài 9', href:'https://docs.google.com/document/d/1FTtAe2Iq_p9j4Z45Em5o9oa_pmdBA1fSOLck.О9ltf7I/edit?usp=drivesdk'},
-  {title:'Bài 10', href:'https://docs.google.com/document/d/17cf397J36QDESuapkWCTt8-URsjQ4KTPS0GA-4v0QHU/edit?usp=drivesdk'},
-  {title:'Bài 11', href:'https://docs.google.com/document/d/11w6pyc9h3xqF6wHZlIJ2K9O7fVp22r7-esO0zK-Ziiw/edit?usp=drivesdk'},
-  {title:'Bài 12', href:'https://docs.google.com/document/d/13vb090tUJtHBMC0W6Ib7LANkDbnA5mFGVnMKD1hAOqw/edit?usp=drivesdk'}
+  {title:'Bài 7', href:'#'},
+  {title:'Bài 8', href:'#'},
+  {title:'Bài 9', href:'#'},
+  {title:'Bài 10', href:'#'},
+  {title:'Bài 11', href:'#'},
+  {title:'Bài 12', href:'#'},
+  {title:'Bài 13', href:'#'},
+  {title:'Bài 14', href:'#'}
 ];
 const linksEl = document.getElementById('links');
 links.forEach(l=>{
@@ -246,11 +228,10 @@ function handleSubmit(e){
   if(!name||!message){ alert('Vui lòng điền tên và nội dung.'); return false;}
   alert(`Cám ơn ${name}!\nChủ đề: ${topic}\nEmail: ${email||'(không có)'}\nNội dung: ${message.substring(0,120)}${message.length>120?'...':''}`);
   document.getElementById('contactForm').reset();
- return false;
+  return false;
 }
 </script>
 
-<!-- ================= NAVBAR DƯỚI ================= -->
 <nav class="navbar footer-nav">
   <div class="nav-container">
     <div class="nav-links">
