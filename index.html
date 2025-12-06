@@ -72,57 +72,57 @@
 }
 /* ================================================== */
 
-  .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
-  header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
-  .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
-        display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
-  h1{margin:0;font-size:26px;}
-  p.lead{margin:4px 0 0;color:var(--muted);}
-  
-  .grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
-  @media(max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:-1}}
+.wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
+header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
+.logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
+h1{margin:0;font-size:26px;}
+p.lead{margin:4px 0 0;color:var(--muted);}
 
-  /* ================== THÀNH VIÊN DÀN NGANG ================== */
-  .members{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-    gap:20px;
-  }
-  .member-card{
-    display:flex; 
-    gap:16px; 
-    background:#60a5fa; 
-    border-radius:16px;
-    padding:18px; 
-    color:#fff;
-    height:100%; /* giúp các khung đều nhau */
-  }
-  /* =========================================================== */
+.grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
+@media(max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:-1}}
 
-  .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
-  .mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
-             display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
-  .mc-content h3{margin:0;font-size:18px;}
-  .mc-content .mc-role{font-size:14px;}
-  .mc-content .mc-about{font-size:14px;margin-top:6px;}
- 
-  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
-  
-  .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  
-  .list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-  
-  .link-btn{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;
-    background:rgba(255,255,255,0.1);
-    border-radius:10px; text-decoration:none; color:inherit;
-  }
-  .sidebar .card + .card{margin-top:14px;}
-  form .row{display:flex; gap:8px;margin-bottom:10px;}
-  form input[type=text],form input[type=email],form textarea,form select{
-    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
-  }
-  form textarea{min-height:86px;resize:vertical;}
+/* ================== THÀNH VIÊN DÀN NGANG ================== */
+.members{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
+  gap:20px;
+}
+.member-card{
+  display:flex; 
+  gap:16px; 
+  background:#60a5fa; 
+  border-radius:16px;
+  padding:18px; 
+  color:#fff;
+  height:100%; /* giúp các khung đều nhau */
+}
+/* =========================================================== */
+
+.mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
+.mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
+           display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
+.mc-content h3{margin:0;font-size:18px;}
+.mc-content .mc-role{font-size:14px;}
+.mc-content .mc-about{font-size:14px;margin-top:6px;}
+
+.card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
+
+.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+
+.list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+
+.link-btn{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;
+  background:rgba(255,255,255,0.1);
+  border-radius:10px; text-decoration:none; color:inherit;
+}
+.sidebar .card + .card{margin-top:14px;}
+form .row{display:flex; gap:8px;margin-bottom:10px;}
+form input[type=text],form input[type=email],form textarea,form select{
+  width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
+}
+form textarea{min-height:86px;resize:vertical;}
 button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04202a; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;}
 </style>
 </head>
@@ -192,12 +192,11 @@ button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#0
 <script>
 // Dữ liệu thành viên
 const members = [
-  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png'
-, bg:null, link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#'},
-  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', bg:null, link:'https://nt4620567-byte.github.io/Nhu/'},
-  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', bg:null, link:'https://queanh1101.github.io/?fbclid=IwY2xjawOVJc1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEe6KPzVMA6ST_8xoNKXu2JNFufc6xYh2M2Fcgp6T7oSZFM9BoTiqeziKBGZRc_aem_AajWgvWAWGfLCzvU1Ih32g'},
-  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', bg:null, link:'https://nguyenhuynhngocchau2508-ops.github.io/NHNC/?fbclid=IwY2xjawOVLk1leHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeFfOHuJNVmRf3QLHWyxgZQCsn4Kx1uV3a2mxtAJ3AZ8g9YM8ne01Pz2iwQJM_aem_sJB1QJRO_GChrvlmnLFIQg'},
-  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', bg:null, link:'https://doquocviet52.github.io/doquocvietprofile.github.io/?fbclid=IwY2xjawOVKgRleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEewdUjPPJw1ijSDik3-Lv62CkkQJhWC38JlMZtSOsIucfD2VBU6R0tJw7S76Y_aem_-98vN5RGqQRYOUpVvBzi7g'}
+  {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png', link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#'},
+  {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', link:'https://nt4620567-byte.github.io/Nhu/'},
+  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', link:'https://queanh1101.github.io/'},
+  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', link:'https://nguyenhuynhngocchau2508-ops.github.io/NHNC/'},
+  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', link:'https://doquocviet52.github.io/doquocvietprofile.github.io/'}
 ];
 
 const membersEl = document.getElementById('members');
@@ -264,7 +263,7 @@ function handleSubmit(e){
   </div>
 </nav>
 <!-- ================================================= -->
-
 </body>
 </html>
+
 
