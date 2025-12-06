@@ -38,12 +38,31 @@
     padding:0 20px;
   }
   .nav-logo{font-size:20px;font-weight:700;color:white;text-decoration:none;}
-  .nav-links{display:flex;gap:18px;}
+  .nav-links{display:flex;gap:18px;position:relative;}
   .nav-links a{
     color:#e2e8f0;text-decoration:none;font-weight:500;
     padding:6px 10px;border-radius:6px;transition:0.25s;
   }
   .nav-links a:hover{background:rgba(255,255,255,0.16);}
+  .dropdown {position:relative; display:inline-block;}
+  .dropbtn {cursor:pointer;}
+  .dropdown-content{
+    display:none;
+    position:absolute;
+    background:rgba(0,0,0,0.7);
+    min-width:180px;
+    box-shadow:0 8px 16px rgba(0,0,0,0.2);
+    z-index:1000;
+    border-radius:8px;
+  }
+  .dropdown-content a{
+    color:#fff;
+    padding:8px 12px;
+    text-decoration:none;
+    display:block;
+  }
+  .dropdown-content a:hover{background:rgba(255,255,255,0.1);}
+  .dropdown:hover .dropdown-content{display:block;}
   @media(max-width:700px){.nav-links{gap:10px; flex-wrap:wrap; justify-content:flex-end;}}
   .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
@@ -51,9 +70,8 @@
         display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
   h1{margin:0;font-size:26px;}
   p.lead{margin:4px 0 0;color:var(--muted);}
-  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* 1 cột vì form xuống cuối */
+  .grid{display:grid; grid-template-columns:1fr; gap:20px;} 
   
-  /* Thành viên 3-2 */
   .members{
     display:grid;
     grid-template-areas: 
@@ -98,7 +116,9 @@
     display:flex;align-items:center;gap:10px;padding:10px 12px;
     background:rgba(255,255,255,0.1);
     border-radius:10px; text-decoration:none; color:inherit;
+    transition:0.25s;
   }
+  .link-btn:hover{background:rgba(255,255,255,0.25);}
   form .row{display:flex; gap:8px;margin-bottom:10px;}
   form input[type=text],form input[type=email],form textarea,form select{
     width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
@@ -114,8 +134,19 @@
     <a href="#" class="nav-logo">Nhóm 4</a>
     <div class="nav-links">
       <a href="#">Trang chủ</a>
-      <a href="#members">Thành viên</a>
-      <a href="#links">Bài tập</a>
+
+      <!-- Dropdown Thành viên -->
+      <div class="dropdown">
+        <a href="#members" class="dropbtn">Thành viên</a>
+        <div class="dropdown-content" id="navMembers"></div>
+      </div>
+
+      <!-- Dropdown Bài tập -->
+      <div class="dropdown">
+        <a href="#links" class="dropbtn">Bài tập</a>
+        <div class="dropdown-content" id="navLinks"></div>
+      </div>
+
       <a href="#contactForm">Gửi ý kiến</a>
       <a href="#">Giới thiệu</a>
     </div>
@@ -174,48 +205,58 @@ const members = [
   {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', link:'https://doquocviet52.github.io/doquocvietprofile.github.io/'}
 ];
 
+// Render thành viên
 const membersEl = document.getElementById('members');
+const navMembersEl = document.getElementById('navMembers');
 members.forEach((m)=>{
-  const card = document.createElement('a'); // card là link luôn
+  // card
+  const card = document.createElement('a');
   card.className='member-card';
   card.href = m.link || '#';
   card.target = '_blank';
   card.style.textDecoration='none';
   card.style.color='inherit';
-
   const avatarHTML = m.photo ? `<img class="mc-avatar-img" src="${m.photo}" alt="${m.name}">` :
     `<div class="mc-avatar">${m.name.split(' ').slice(-1)[0][0]}${m.name.split(' ')[0][0]}</div>`;
-
-  card.innerHTML = `
-    ${avatarHTML}
-    <div class="mc-content">
-      <h3>${m.name}</h3>
-      <p class="mc-role">Lớp ${m.cls}</p>
-      <p class="mc-about">${m.about}</p>
-    </div>`;
+  card.innerHTML = `${avatarHTML}<div class="mc-content"><h3>${m.name}</h3><p class="mc-role">Lớp ${m.cls}</p><p class="mc-about">${m.about}</p></div>`;
   membersEl.appendChild(card);
+
+  // dropdown navbar
+  const navA = document.createElement('a');
+  navA.href = m.link;
+  navA.target = '_blank';
+  navA.textContent = m.name;
+  navMembersEl.appendChild(navA);
 });
 
-// Dữ liệu bài tập, có thể thêm nhiều hơn
+// Dữ liệu bài tập
 const links = [
   {title:'Bài 7', href:'https://nt4620567-byte.github.io/B-I-7/'},
   {title:'Bài 8', href:'#'},
   {title:'Bài 9', href:'#'},
   {title:'Bài 10', href:'#'},
   {title:'Bài 11', href:'#'},
-  {title:'Bài 12', href:'#'},
-  {title:'Bài 13', href:'#'},
-  {title:'Bài 14', href:'#'}
+  {title:'Bài 12', href:'#'}
 ];
 const linksEl = document.getElementById('links');
+const navLinksEl = document.getElementById('navLinks');
 links.forEach(l=>{
+  // card
   const a = document.createElement('a'); 
   a.className='link-btn'; 
   a.href=l.href; 
   a.target='_blank';
-  a.innerHTML=`<div style="width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700">${l.title.split(' ')[1]||l.title}</div>
-    <div><div style="font-weight:600">${l.title}</div><small>Mở liên kết</small></div>`;
+  a.innerHTML=`
+    <div style="width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700">${l.title}</div>
+    <div><div style="font-weight:600">${l.title}</div></div>`;
   linksEl.appendChild(a);
+
+  // navbar
+  const navA = document.createElement('a');
+  navA.href=l.href;
+  navA.target='_blank';
+  navA.textContent = l.title;
+  navLinksEl.appendChild(navA);
 });
 
 // Form xử lý demo
@@ -232,16 +273,6 @@ function handleSubmit(e){
 }
 </script>
 
-<nav class="navbar footer-nav">
-  <div class="nav-container">
-    <div class="nav-links">
-      <a href="#">Trang chủ</a>
-      <a href="#members">Thành viên</a>
-      <a href="#links">Bài tập</a>
-      <a href="#contactForm">Gửi ý kiến</a>
-      <a href="#">Giới thiệu</a>
-    </div>
-  </div>
-</nav>
 </body>
 </html>
+
