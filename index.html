@@ -77,25 +77,18 @@
   h1{margin:0;font-size:26px;}
   p.lead{margin:4px 0 0;color:var(--muted);}
   
-  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* chỉ còn 1 cột */
+  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* 1 cột chính */
 
-  /* ================== THÀNH VIÊN NẰM NGANG CÓ CUỘN ================== */
+  /* ================== THÀNH VIÊN LƯỚI 3-2 ================== */
   .members{
-    display:flex;          /* xếp ngang */
-    overflow-x:auto;       /* bật cuộn ngang nếu vượt */
-    gap:20px;              
-    padding-bottom:10px;
-    scrollbar-width: thin;
+    display:grid;
+    grid-template-columns:repeat(3,1fr); /* 3 người trên 1 hàng */
+    gap:20px;
   }
-  .members::-webkit-scrollbar{
-    height:8px;
-  }
-  .members::-webkit-scrollbar-thumb{
-    background:rgba(0,0,0,0.3);
-    border-radius:4px;
-  }
+  @media(max-width:900px){.members{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.members{grid-template-columns:1fr;}}
+
   .member-card{
-    flex: 0 0 280px;       /* chiều rộng cố định 280px */
     display:flex; 
     gap:16px; 
     background:#60a5fa; 
