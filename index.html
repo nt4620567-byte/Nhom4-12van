@@ -77,17 +77,25 @@
   h1{margin:0;font-size:26px;}
   p.lead{margin:4px 0 0;color:var(--muted);}
   
-  .grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
-  @media(max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:-1}}
+  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* chỉ còn 1 cột */
 
-  /* ================== THÀNH VIÊN NẰM NGANG ================== */
+  /* ================== THÀNH VIÊN NẰM NGANG CÓ CUỘN ================== */
   .members{
-    display: flex;           /* xếp ngang */
-    flex-wrap: wrap;         /* tự xuống dòng khi hết chỗ */
-    gap: 20px;               /* khoảng cách giữa các thành viên */
+    display:flex;          /* xếp ngang */
+    overflow-x:auto;       /* bật cuộn ngang nếu vượt */
+    gap:20px;              
+    padding-bottom:10px;
+    scrollbar-width: thin;
+  }
+  .members::-webkit-scrollbar{
+    height:8px;
+  }
+  .members::-webkit-scrollbar-thumb{
+    background:rgba(0,0,0,0.3);
+    border-radius:4px;
   }
   .member-card{
-    flex: 0 1 280px;         /* chiều rộng tối thiểu 280px, co dãn */
+    flex: 0 0 280px;       /* chiều rộng cố định 280px */
     display:flex; 
     gap:16px; 
     background:#60a5fa; 
@@ -96,7 +104,6 @@
     color:#fff;
     height:100%;
   }
-  /* =========================================================== */
 
   .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
   .mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
@@ -116,7 +123,7 @@
     background:rgba(255,255,255,0.1);
     border-radius:10px; text-decoration:none; color:inherit;
   }
-  .sidebar .card + .card{margin-top:14px;}
+
   form .row{display:flex; gap:8px;margin-bottom:10px;}
   form input[type=text],form input[type=email],form textarea,form select{
     width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
@@ -152,37 +159,34 @@
   </header>
 
   <main class="grid">
-    <section>
-      <!-- CARD THÀNH VIÊN -->
-      <div class="card">
-        <div class="section-title"><h2>Thành viên</h2></div>
-        <div class="members" id="members"></div>
-      </div>
+    <!-- CARD THÀNH VIÊN -->
+    <div class="card">
+      <div class="section-title"><h2>Thành viên</h2></div>
+      <div class="members" id="members"></div>
+    </div>
 
-      <!-- DANH SÁCH BÀI TẬP -->
-      <div class="card" style="margin-top:16px">
-        <div class="section-title"><h2>Bài tập & tài liệu</h2></div>
-        <div class="list-links" id="links"></div>
-      </div>
-    </section>
+    <!-- DANH SÁCH BÀI TẬP -->
+    <div class="card" style="margin-top:16px">
+      <div class="section-title"><h2>Bài tập & tài liệu</h2></div>
+      <div class="list-links" id="links"></div>
+    </div>
 
     <!-- FORM GỬI Ý KIẾN -->
-    <aside class="sidebar">
-      <div class="card">
-        <div class="section-title"><h2>Form gửi ý kiến</h2></div>
-        <form id="contactForm" onsubmit="return handleSubmit(event)">
-          <div class="row"><input type="text" id="name" placeholder="Họ & tên" required></div>
-          <div class="row"><input type="email" id="email" placeholder="Email (không bắt buộc)"></div>
-          <div class="row"><select id="topic">
-            <option value="phanhoi">Phản hồi</option>
-            <option value="nopbai">Nộp bài</option>
-            <option value="yeucau">Yêu cầu</option>
-          </select></div>
-          <div class="row"><textarea id="message" placeholder="Nội dung" required></textarea></div>
-          <div class="row"><button class="primary" type="submit">Gửi</button></div>
-        </form>
-      </div>
-    </aside>
+    <div class="card" style="margin-top:16px">
+      <div class="section-title"><h2>Form gửi ý kiến</h2></div>
+      <form id="contactForm" onsubmit="return handleSubmit(event)">
+        <div class="row"><input type="text" id="name" placeholder="Họ & tên" required></div>
+        <div class="row"><input type="email" id="email" placeholder="Email (không bắt buộc)"></div>
+        <div class="row"><select id="topic">
+          <option value="phanhoi">Phản hồi</option>
+          <option value="nopbai">Nộp bài</option>
+          <option value="yeucau">Yêu cầu</option>
+        </select></div>
+        <div class="row"><textarea id="message" placeholder="Nội dung" required></textarea></div>
+        <div class="row"><button class="primary" type="submit">Gửi</button></div>
+      </form>
+    </div>
+
   </main>
 
   <footer style="margin-top:22px; text-align:center; color:#000">© Nhóm 4 • Demo Web</footer>
@@ -264,5 +268,4 @@ function handleSubmit(e){
 <!-- ================================================= -->
 </body>
 </html>
-
 
