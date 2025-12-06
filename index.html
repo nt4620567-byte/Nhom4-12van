@@ -68,7 +68,6 @@
       gap:10px; flex-wrap:wrap; justify-content:flex-end;
     }
   }
-  /* ================================================== */
 
   .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
@@ -77,16 +76,22 @@
   h1{margin:0;font-size:26px;}
   p.lead{margin:4px 0 0;color:var(--muted);}
   
-  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* 1 cột chính */
-
-  /* ================== THÀNH VIÊN LƯỚI 3-2 ================== */
+  .grid{display:grid; grid-template-columns:1fr; gap:20px;} /* form xuống cuối nên chỉ 1 cột */
+  
+  /* ================== THÀNH VIÊN 3-2 ================== */
   .members{
     display:grid;
-    grid-template-columns:repeat(3,1fr); /* 3 người trên 1 hàng */
+    grid-template-areas: 
+      "m1 m2 m3"
+      "m4 m5 .";
     gap:20px;
+    justify-content:center;
   }
-  @media(max-width:900px){.members{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:600px){.members{grid-template-columns:1fr;}}
+  .member-card:nth-child(1){grid-area:m1;}
+  .member-card:nth-child(2){grid-area:m2;}
+  .member-card:nth-child(3){grid-area:m3;}
+  .member-card:nth-child(4){grid-area:m4;}
+  .member-card:nth-child(5){grid-area:m5;}
 
   .member-card{
     display:flex; 
@@ -96,6 +101,7 @@
     padding:18px; 
     color:#fff;
     height:100%;
+    width:280px;
   }
 
   .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
@@ -116,7 +122,6 @@
     background:rgba(255,255,255,0.1);
     border-radius:10px; text-decoration:none; color:inherit;
   }
-
   form .row{display:flex; gap:8px;margin-bottom:10px;}
   form input[type=text],form input[type=email],form textarea,form select{
     width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
@@ -159,13 +164,13 @@
     </div>
 
     <!-- DANH SÁCH BÀI TẬP -->
-    <div class="card" style="margin-top:16px">
+    <div class="card">
       <div class="section-title"><h2>Bài tập & tài liệu</h2></div>
       <div class="list-links" id="links"></div>
     </div>
 
-    <!-- FORM GỬI Ý KIẾN -->
-    <div class="card" style="margin-top:16px">
+    <!-- FORM GỬI Ý KIẾN XUỐNG CUỐI -->
+    <div class="card">
       <div class="section-title"><h2>Form gửi ý kiến</h2></div>
       <form id="contactForm" onsubmit="return handleSubmit(event)">
         <div class="row"><input type="text" id="name" placeholder="Họ & tên" required></div>
@@ -179,7 +184,6 @@
         <div class="row"><button class="primary" type="submit">Gửi</button></div>
       </form>
     </div>
-
   </main>
 
   <footer style="margin-top:22px; text-align:center; color:#000">© Nhóm 4 • Demo Web</footer>
@@ -196,7 +200,7 @@ const members = [
 ];
 
 const membersEl = document.getElementById('members');
-members.forEach(m=>{
+members.forEach((m)=>{
   const card = document.createElement('div');
   card.className='member-card';
   const avatarHTML = m.photo ? `<img class="mc-avatar-img" src="${m.photo}" alt="${m.name}">` :
@@ -216,10 +220,7 @@ members.forEach(m=>{
 const links = [
   {title:'Bài 7', href:'https://docs.google.com/document/d/1m_pAeJTqHiUTKwysgXKJ3bCzX8lwi2Yv1XZQs52rP88/edit?usp=drivesdk'},
   {title:'Bài 8', href:'https://docs.google.com/document/d/1MrnnoU4JN_IzSy4xH1nbMDgYQD1JE3fLebK19yrAiR8/edit?usp=drivesdk'},
-  {title:'Bài 9', href:'https://docs.google.com/document/d/1FTtAe2Iq_p9j4Z45Em5o9oa_pmdBA1fSOLck.О9ltf7I/edit?usp=drivesdk'},
-  {title:'Bài 10', href:'https://docs.google.com/document/d/17cf397J36QDESuapkWCTt8-URsjQ4KTPS0GA-4v0QHU/edit?usp=drivesdk'},
-  {title:'Bài 11', href:'https://docs.google.com/document/d/11w6pyc9h3xqF6wHZlIJ2K9O7fVp22r7-esO0zK-Ziiw/edit?usp=drivesdk'},
-  {title:'Bài 12', href:'https://docs.google.com/document/d/13vb090tUJtHBMC0W6Ib7LANkDbnA5mFGVnMKD1hAOqw/edit?usp=drivesdk'}
+  {title:'Bài 9', href:'https://docs.google.com/document/d/1FTtAe2Iq_p9j4Z45Em5o9oa_pmdBA1fSOLck.О9ltf7I/edit?usp=drivesdk'}
 ];
 const linksEl = document.getElementById('links');
 links.forEach(l=>{
@@ -258,7 +259,5 @@ function handleSubmit(e){
     </div>
   </div>
 </nav>
-<!-- ================================================= -->
 </body>
 </html>
-
