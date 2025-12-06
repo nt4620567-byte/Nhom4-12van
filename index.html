@@ -9,121 +9,120 @@
   }
   *{box-sizing:border-box;}
   body{
-  margin:0;
-  font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-
-  background: url("https://github.com/user-attachments/assets/ef70f834-1169-4741-8e8c-10a0b1650724") no-repeat center center fixed;
-  background-size: cover;
-
-  color:#e2e8f0;
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-/* ================= NAVIGATION BAR ================= */
-.navbar{
-  width:100%;
-  background:rgba(0,0,0,0.55);
-  backdrop-filter:blur(5px);
-  position:sticky;
-  top:0;
-  z-index:999;
-  padding:10px 0;
-}
-.footer-nav{
-  margin-top:20px;
-  position:static;
-}
-.nav-container{
-  max-width:var(--maxw);
-  margin:0 auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 20px;
-}
-.nav-logo{
-  font-size:20px;
-  font-weight:700;
-  color:white;
-  text-decoration:none;
-}
-.nav-links{
-  display:flex;
-  gap:18px;
-}
-.nav-links a{
-  color:#e2e8f0;
-  text-decoration:none;
-  font-weight:500;
-  padding:6px 10px;
-  border-radius:6px;
-  transition:0.25s;
-}
-.nav-links a:hover{
-  background:rgba(255,255,255,0.16);
-}
-@media(max-width:700px){
-  .nav-links{
-    gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    margin:0;
+    font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background: url("https://github.com/user-attachments/assets/ef70f834-1169-4741-8e8c-10a0b1650724") no-repeat center center fixed;
+    background-size: cover;
+    color:#e2e8f0;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
   }
-}
-/* ================================================== */
 
-.wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
-header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
-.logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
-      display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
-h1{margin:0;font-size:26px;}
-p.lead{margin:4px 0 0;color:var(--muted);}
+  /* ================= NAVIGATION BAR ================= */
+  .navbar{
+    width:100%;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(5px);
+    position:sticky;
+    top:0;
+    z-index:999;
+    padding:10px 0;
+  }
+  .footer-nav{
+    margin-top:20px;
+    position:static;
+  }
+  .nav-container{
+    max-width:var(--maxw);
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+  }
+  .nav-logo{
+    font-size:20px;
+    font-weight:700;
+    color:white;
+    text-decoration:none;
+  }
+  .nav-links{
+    display:flex;
+    gap:18px;
+  }
+  .nav-links a{
+    color:#e2e8f0;
+    text-decoration:none;
+    font-weight:500;
+    padding:6px 10px;
+    border-radius:6px;
+    transition:0.25s;
+  }
+  .nav-links a:hover{
+    background:rgba(255,255,255,0.16);
+  }
+  @media(max-width:700px){
+    .nav-links{
+      gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+  }
+  /* ================================================== */
 
-.grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
-@media(max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:-1}}
+  .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
+  header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
+  .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
+        display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
+  h1{margin:0;font-size:26px;}
+  p.lead{margin:4px 0 0;color:var(--muted);}
+  
+  .grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
+  @media(max-width:880px){.grid{grid-template-columns:1fr}.sidebar{order:-1}}
 
-/* ================== THÀNH VIÊN DÀN NGANG ================== */
-.members{
-  display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
-  gap:20px;
-}
-.member-card{
-  display:flex; 
-  gap:16px; 
-  background:#60a5fa; 
-  border-radius:16px;
-  padding:18px; 
-  color:#fff;
-  height:100%; /* giúp các khung đều nhau */
-}
-/* =========================================================== */
+  /* ================== THÀNH VIÊN NẰM NGANG ================== */
+  .members{
+    display: flex;           /* xếp ngang */
+    flex-wrap: wrap;         /* tự xuống dòng khi hết chỗ */
+    gap: 20px;               /* khoảng cách giữa các thành viên */
+  }
+  .member-card{
+    flex: 0 1 280px;         /* chiều rộng tối thiểu 280px, co dãn */
+    display:flex; 
+    gap:16px; 
+    background:#60a5fa; 
+    border-radius:16px;
+    padding:18px; 
+    color:#fff;
+    height:100%;
+  }
+  /* =========================================================== */
 
-.mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
-.mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
-           display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
-.mc-content h3{margin:0;font-size:18px;}
-.mc-content .mc-role{font-size:14px;}
-.mc-content .mc-about{font-size:14px;margin-top:6px;}
-
-.card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
-
-.section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-
-.list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
-
-.link-btn{
-  display:flex;align-items:center;gap:10px;padding:10px 12px;
-  background:rgba(255,255,255,0.1);
-  border-radius:10px; text-decoration:none; color:inherit;
-}
-.sidebar .card + .card{margin-top:14px;}
-form .row{display:flex; gap:8px;margin-bottom:10px;}
-form input[type=text],form input[type=email],form textarea,form select{
-  width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
-}
-form textarea{min-height:86px;resize:vertical;}
-button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04202a; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;}
+  .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
+  .mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
+             display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
+  .mc-content h3{margin:0;font-size:18px;}
+  .mc-content .mc-role{font-size:14px;}
+  .mc-content .mc-about{font-size:14px;margin-top:6px;}
+ 
+  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
+  
+  .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
+  
+  .list-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+  
+  .link-btn{
+    display:flex;align-items:center;gap:10px;padding:10px 12px;
+    background:rgba(255,255,255,0.1);
+    border-radius:10px; text-decoration:none; color:inherit;
+  }
+  .sidebar .card + .card{margin-top:14px;}
+  form .row{display:flex; gap:8px;margin-bottom:10px;}
+  form input[type=text],form input[type=email],form textarea,form select{
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
+  }
+  form textarea{min-height:86px;resize:vertical;}
+  button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04202a; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;}
 </style>
 </head>
 <body>
@@ -204,7 +203,7 @@ members.forEach(m=>{
   const card = document.createElement('div');
   card.className='member-card';
   const avatarHTML = m.photo ? `<img class="mc-avatar-img" src="${m.photo}" alt="${m.name}">` :
-`<div class="mc-avatar">${m.name.split(' ').slice(-1)[0][0]}${m.name.split(' ')[0][0]}</div>`;
+    `<div class="mc-avatar">${m.name.split(' ').slice(-1)[0][0]}${m.name.split(' ')[0][0]}</div>`;
   card.innerHTML = `
     ${avatarHTML}
     <div class="mc-content">
