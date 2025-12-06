@@ -44,8 +44,8 @@
     padding:6px 10px;border-radius:6px;transition:0.25s;
   }
   .nav-links a:hover{background:rgba(255,255,255,0.16);}
-  .dropdown {position:relative; display:inline-block;}
-  .dropbtn {cursor:pointer;}
+  .dropdown{position:relative;display:inline-block;}
+  .dropbtn{cursor:pointer;}
   .dropdown-content{
     display:none;
     position:absolute;
@@ -63,7 +63,7 @@
   }
   .dropdown-content a:hover{background:rgba(255,255,255,0.1);}
   .dropdown:hover .dropdown-content{display:block;}
-  @media(max-width:700px){.nav-links{gap:10px; flex-wrap:wrap; justify-content:flex-end;}}
+  @media(max-width:700px){.nav-links{gap:10px;flex-wrap:wrap;justify-content:flex-end;}}
   .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
   header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
   .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
@@ -72,6 +72,7 @@
   p.lead{margin:4px 0 0;color:var(--muted);}
   .grid{display:grid; grid-template-columns:1fr; gap:20px;} 
   
+  /* GRID THÀNH VIÊN */
   .members{
     display:grid;
     grid-template-areas: 
@@ -87,20 +88,14 @@
   .member-card:nth-child(5){grid-area:m5;}
 
   .member-card{
-    display:flex; 
-    gap:16px; 
-    background:#60a5fa; 
-    border-radius:16px;
-    padding:18px; 
-    color:#fff;
-    height:100%;
-    width:280px;
-    text-decoration:none;
-    transition:0.3s;
+    display:flex; gap:16px;
+    background:#60a5fa; border-radius:16px;
+    padding:18px; color:#fff; height:100%; width:280px;
+    text-decoration:none; transition:0.3s;
   }
-  .member-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  .member-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
     cursor:pointer;
   }
   .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
@@ -109,22 +104,40 @@
   .mc-content h3{margin:0;font-size:18px;}
   .mc-content .mc-role{font-size:14px;}
   .mc-content .mc-about{font-size:14px;margin-top:6px;}
-  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65 !important;}
+
+  /* CARD */
+  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65!important;}
   .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-  .list-links{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;}
+
+  /* LIST BÀI TẬP – XẾP DỌC */
+  .list-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
   .link-btn{
-    display:flex;align-items:center;gap:10px;padding:10px 12px;
-    background:rgba(255,255,255,0.1);
-    border-radius:10px; text-decoration:none; color:inherit;
+    padding:12px 14px;
+    background:rgba(255,255,255,0.15);
+    border-radius:10px;
+    text-decoration:none; 
+    color:#003a65;
+    font-weight:600;
     transition:0.25s;
   }
-  .link-btn:hover{background:rgba(255,255,255,0.25);}
+  .link-btn:hover{background:rgba(255,255,255,0.3);}
+  
+  /* FORM */
   form .row{display:flex; gap:8px;margin-bottom:10px;}
   form input[type=text],form input[type=email],form textarea,form select{
-    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; outline:none
+    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
+    background:transparent; color:inherit; outline:none;
   }
   form textarea{min-height:86px;resize:vertical;}
-  button.primary{background:linear-gradient(90deg,var(--accent),#60a5fa); color:#04202a; border:none; padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer;}
+  button.primary{
+    background:linear-gradient(90deg,var(--accent),#60a5fa);
+    color:#04202a;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;
+  }
 </style>
 </head>
 <body>
@@ -163,19 +176,19 @@
   </header>
 
   <main class="grid">
-    <!-- CARD THÀNH VIÊN -->
+    <!-- THÀNH VIÊN -->
     <div class="card">
       <div class="section-title"><h2>Thành viên</h2></div>
       <div class="members" id="members"></div>
     </div>
 
-    <!-- DANH SÁCH BÀI TẬP -->
+    <!-- BÀI TẬP -->
     <div class="card">
       <div class="section-title"><h2>Bài tập & tài liệu</h2></div>
       <div class="list-links" id="links"></div>
     </div>
 
-    <!-- FORM GỬI Ý KIẾN -->
+    <!-- FORM -->
     <div class="card">
       <div class="section-title"><h2>Form gửi ý kiến</h2></div>
       <form id="contactForm" onsubmit="return handleSubmit(event)">
@@ -196,8 +209,8 @@
 </div>
 
 <script>
-// Dữ liệu thành viên
-const members = [
+// MEMBER DATA
+const members=[
   {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png', link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#'},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', link:'https://nt4620567-byte.github.io/Nhu/'},
   {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', link:'https://queanh1101.github.io/'},
@@ -205,32 +218,33 @@ const members = [
   {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', link:'https://doquocviet52.github.io/doquocvietprofile.github.io/'}
 ];
 
-// Render thành viên
-const membersEl = document.getElementById('members');
-const navMembersEl = document.getElementById('navMembers');
-members.forEach((m)=>{
-  // card
-  const card = document.createElement('a');
+// Render members
+const membersEl=document.getElementById('members');
+const navMembersEl=document.getElementById('navMembers');
+members.forEach(m=>{
+  const card=document.createElement('a');
   card.className='member-card';
-  card.href = m.link || '#';
-  card.target = '_blank';
-  card.style.textDecoration='none';
-  card.style.color='inherit';
-  const avatarHTML = m.photo ? `<img class="mc-avatar-img" src="${m.photo}" alt="${m.name}">` :
-    `<div class="mc-avatar">${m.name.split(' ').slice(-1)[0][0]}${m.name.split(' ')[0][0]}</div>`;
-  card.innerHTML = `${avatarHTML}<div class="mc-content"><h3>${m.name}</h3><p class="mc-role">Lớp ${m.cls}</p><p class="mc-about">${m.about}</p></div>`;
+  card.href=m.link;
+  card.target='_blank';
+  card.innerHTML=`
+    ${m.photo?`<img class="mc-avatar-img" src="${m.photo}">`:`<div class="mc-avatar">${m.name[0]}</div>`}
+    <div class="mc-content">
+      <h3>${m.name}</h3>
+      <p class="mc-role">Lớp ${m.cls}</p>
+      <p class="mc-about">${m.about}</p>
+    </div>
+  `;
   membersEl.appendChild(card);
 
-  // dropdown navbar
-  const navA = document.createElement('a');
-  navA.href = m.link;
-  navA.target = '_blank';
-  navA.textContent = m.name;
+  const navA=document.createElement('a');
+  navA.href=m.link;
+  navA.target='_blank';
+  navA.textContent=m.name;
   navMembersEl.appendChild(navA);
 });
 
-// Dữ liệu bài tập
-const links = [
+// LINKS
+const links=[
   {title:'Bài 7: HTML và cấu trúc trang web', href:'https://nt4620567-byte.github.io/BAI7/'},
   {title:'Bài 8: Định dạng văn bản', href:'https://dangthunguyenhuynh43-ui.github.io/BAI8/'},
   {title:'Bài 9: Tạo danh sách, bảng', href:'https://nguyenhuynhngocchau2508-ops.github.io/tin-9/'},
@@ -238,41 +252,39 @@ const links = [
   {title:'Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến vào trang web', href:'https://queanh1101.github.io/Bai11.github.io/'},
   {title:'Bài 12: Tạo biểu mẫu', href:'https://doquocviet52.github.io/TInHocBai12/'}
 ];
-const linksEl = document.getElementById('links');
-const navLinksEl = document.getElementById('navLinks');
+
+const linksEl=document.getElementById('links');
+const navLinksEl=document.getElementById('navLinks');
+
 links.forEach(l=>{
-  // card
-  const a = document.createElement('a'); 
-  a.className='link-btn'; 
-  a.href=l.href; 
+  const a=document.createElement('a');
+  a.className='link-btn';
+  a.href=l.href;
   a.target='_blank';
-  a.innerHTML=`
-    <div style="width:44px;height:44px;border-radius:8px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;font-weight:700">${l.title}</div>
-    <div><div style="font-weight:600">${l.title}</div></div>`;
+  a.textContent=l.title;
   linksEl.appendChild(a);
 
-  // navbar
-  const navA = document.createElement('a');
-  navA.href=l.href;
-  navA.target='_blank';
-  navA.textContent = l.title;
-  navLinksEl.appendChild(navA);
+  const n=document.createElement('a');
+  n.href=l.href; 
+  n.target='_blank';
+  n.textContent=l.title;
+  navLinksEl.appendChild(n);
 });
 
-// Form xử lý demo
+// FORM
 function handleSubmit(e){
   e.preventDefault();
   const name=document.getElementById('name').value.trim();
   const email=document.getElementById('email').value.trim();
   const topic=document.getElementById('topic').value;
-  const message=document.getElementById('message').value.trim();
-  if(!name||!message){ alert('Vui lòng điền tên và nội dung.'); return false;}
-  alert(`Cám ơn ${name}!\nChủ đề: ${topic}\nEmail: ${email||'(không có)'}\nNội dung: ${message.substring(0,120)}${message.length>120?'...':''}`);
+  const msg=document.getElementById('message').value.trim();
+  
+  if(!name||!msg){alert("Vui lòng điền tên và nội dung.");return false;}
+
+  alert(`Cảm ơn ${name}!\nChủ đề: ${topic}\nEmail: ${email||'(không có)'}\nNội dung: ${msg}`);
   document.getElementById('contactForm').reset();
-  return false;
 }
 </script>
 
 </body>
 </html>
-
