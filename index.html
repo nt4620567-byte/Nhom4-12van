@@ -3,6 +3,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nhóm 4 - Bài tập & Thành viên</title>
+
 <style>
   :root{
     --accent:#60a5fa; --bg:#f5f8ff; --card:#d6f0ff; --muted:#000; --radius:14px; --maxw:980px;
@@ -11,171 +12,175 @@
   body{
     margin:0;
     font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    background: url("https://github.com/user-attachments/assets/ef70f834-1169-4741-8e8c-10a0b1650724") no-repeat center center fixed;
-    background-size: cover;
+    background:url("https://github.com/user-attachments/assets/ef70f834-1169-4741-8e8c-10a0b1650724")
+      no-repeat center center fixed;
+    background-size:cover;
     color:#e2e8f0;
     padding:20px;
     display:flex;
     flex-direction:column;
     align-items:center;
   }
+
+  /* NAVBAR */
   .navbar{
     width:100%;
     background:rgba(0,0,0,0.55);
     backdrop-filter:blur(5px);
-    position:sticky;
-    top:0;
-    z-index:999;
+    position:sticky; top:0; z-index:999;
     padding:10px 0;
   }
-  .footer-nav{margin-top:20px;position:static;}
   .nav-container{
     max-width:var(--maxw);
     margin:0 auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display:flex; justify-content:space-between; align-items:center;
     padding:0 20px;
   }
   .nav-logo{font-size:20px;font-weight:700;color:white;text-decoration:none;}
-  .nav-links{display:flex;gap:18px;position:relative;}
+  .nav-links{display:flex;gap:18px;}
   .nav-links a{
     color:#e2e8f0;text-decoration:none;font-weight:500;
     padding:6px 10px;border-radius:6px;transition:0.25s;
   }
   .nav-links a:hover{background:rgba(255,255,255,0.16);}
   .dropdown{position:relative;display:inline-block;}
-  .dropbtn{cursor:pointer;}
   .dropdown-content{
     display:none;
     position:absolute;
     background:rgba(0,0,0,0.7);
     min-width:180px;
-    box-shadow:0 8px 16px rgba(0,0,0,0.2);
-    z-index:1000;
     border-radius:8px;
   }
-  .dropdown-content a{
-    color:#fff;
-    padding:8px 12px;
-    text-decoration:none;
-    display:block;
-  }
-  .dropdown-content a:hover{background:rgba(255,255,255,0.1);}
   .dropdown:hover .dropdown-content{display:block;}
-  @media(max-width:700px){.nav-links{gap:10px;flex-wrap:wrap;justify-content:flex-end;}}
+  .dropdown-content a{
+    color:white; padding:8px 12px; display:block; text-decoration:none;
+  }
+
   .wrap{width:100%; max-width:var(--maxw); margin-top:20px;}
-  header{display:flex; align-items:center; gap:16px; margin-bottom:22px;}
-  .logo{width:86px;height:86px;border-radius:18px;background:linear-gradient(135deg,var(--accent),#7dd3fc);
-        display:flex;align-items:center;justify-content:center;font-weight:700;color:#04202a;font-size:18px;}
-  h1{margin:0;font-size:26px;}
-  p.lead{margin:4px 0 0;color:var(--muted);}
-  .grid{display:grid; grid-template-columns:1fr; gap:20px;} 
-  
-  /* GRID THÀNH VIÊN */
+
+  /* 🌈 BANNER CHUYỂN MÀU */
+  .banner{
+    width:100%;
+    padding:26px 10px;
+    margin-bottom:20px;
+    text-align:center;
+    font-size:32px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    background:linear-gradient(
+      120deg,
+      rgba(255,255,255,0.85),
+      rgba(120,190,255,0.45),
+      rgba(255,255,255,0.85)
+    );
+    background-size:300% 300%;
+    animation:gradientShift 6s ease-in-out infinite;
+
+    color:#002236;
+    border-radius:18px;
+    box-shadow:0 10px 32px rgba(0,0,0,0.25);
+    backdrop-filter:blur(6px);
+  }
+  @keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+
+  /* CARD */
+  .grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .card{
+    background:var(--card);
+    padding:18px;
+    border-radius:var(--radius);
+    box-shadow:0 8px 28px rgba(2,6,23,0.06);
+    color:#003a65!important;
+  }
+  .section-title{margin-bottom:12px;}
+
+  /* MEMBERS GRID */
   .members{
     display:grid;
-    grid-template-areas: 
-      "m1 m2 m3"
-      "m4 m5 .";
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:20px;
-    justify-content:center;
   }
-  .member-card:nth-child(1){grid-area:m1;}
-  .member-card:nth-child(2){grid-area:m2;}
-  .member-card:nth-child(3){grid-area:m3;}
-  .member-card:nth-child(4){grid-area:m4;}
-  .member-card:nth-child(5){grid-area:m5;}
 
   .member-card{
     display:flex; gap:16px;
-    background:#60a5fa; border-radius:16px;
-    padding:18px; color:#fff; height:100%; width:280px;
-    text-decoration:none; transition:0.3s;
+    background:#60a5fa;
+    border-radius:16px;
+    padding:18px; 
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
   }
-  .member-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 30px rgba(0,0,0,0.25);
-    cursor:pointer;
-  }
+  .member-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.25);}
   .mc-avatar-img{width:70px;height:70px;border-radius:50%;object-fit:cover;}
-  .mc-avatar{width:70px;height:70px;border-radius:50%;background:rgba(0,0,0,0.2);
-             display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;}
-  .mc-content h3{margin:0;font-size:18px;}
-  .mc-content .mc-role{font-size:14px;}
-  .mc-content .mc-about{font-size:14px;margin-top:6px;}
 
-  /* CARD */
-  .card{background:var(--card); padding:18px; border-radius:var(--radius); box-shadow:0 8px 28px rgba(2,6,23,0.06); color:#003a65!important;}
-  .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
-
-  /* LIST BÀI TẬP – XẾP DỌC */
+  /* LINKS – xếp dọc */
   .list-links{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+    display:flex; flex-direction:column; gap:12px;
   }
-
   .link-btn{
     padding:12px 14px;
     background:rgba(255,255,255,0.15);
     border-radius:10px;
-    text-decoration:none; 
     color:#003a65;
     font-weight:600;
+    text-decoration:none;
     transition:0.25s;
   }
   .link-btn:hover{background:rgba(255,255,255,0.3);}
-  
+
   /* FORM */
-  form .row{display:flex; gap:8px;margin-bottom:10px;}
-  form input[type=text],form input[type=email],form textarea,form select{
-    width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
-    background:transparent; color:inherit; outline:none;
+  form .row{margin-bottom:10px;}
+  input, textarea, select{
+    width:100%; padding:10px 12px;
+    border-radius:10px; border:1px solid rgba(255,255,255,0.3);
+    background:transparent; color:#003a65; outline:none;
   }
-  form textarea{min-height:86px;resize:vertical;}
   button.primary{
     background:linear-gradient(90deg,var(--accent),#60a5fa);
-    color:#04202a;border:none;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;
+    color:#04202a; padding:10px 14px;
+    border:none; border-radius:10px;
+    font-weight:700; cursor:pointer;
   }
 </style>
 </head>
+
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-container">
     <a href="#" class="nav-logo">Nhóm 4</a>
     <div class="nav-links">
       <a href="#">Trang chủ</a>
 
-      <!-- Dropdown Thành viên -->
       <div class="dropdown">
-        <a href="#members" class="dropbtn">Thành viên</a>
+        <a class="dropbtn">Thành viên</a>
         <div class="dropdown-content" id="navMembers"></div>
       </div>
 
-      <!-- Dropdown Bài tập -->
       <div class="dropdown">
-        <a href="#links" class="dropbtn">Bài tập</a>
+        <a class="dropbtn">Bài tập</a>
         <div class="dropdown-content" id="navLinks"></div>
       </div>
 
       <a href="#contactForm">Gửi ý kiến</a>
-      <a href="#">Giới thiệu</a>
     </div>
   </div>
 </nav>
 
 <div class="wrap">
-  <header>
-    <div class="logo">G4</div>
-    <div>
-      <h1>Nhóm 4</h1>
-      <p class="lead">Trang giới thiệu & bài tập</p>
-    </div>
-  </header>
+
+  <!-- 🌈 BANNER CHUYỂN MÀU -->
+  <div class="banner">Báo cáo tin học</div>
 
   <main class="grid">
+
     <!-- THÀNH VIÊN -->
     <div class="card">
       <div class="section-title"><h2>Thành viên</h2></div>
@@ -194,53 +199,42 @@
       <form id="contactForm" onsubmit="return handleSubmit(event)">
         <div class="row"><input type="text" id="name" placeholder="Họ & tên" required></div>
         <div class="row"><input type="email" id="email" placeholder="Email (không bắt buộc)"></div>
-        <div class="row"><select id="topic">
-          <option value="phanhoi">Phản hồi</option>
-          <option value="nopbai">Nộp bài</option>
-          <option value="yeucau">Yêu cầu</option>
-        </select></div>
+        <div class="row">
+          <select id="topic">
+            <option value="phanhoi">Phản hồi</option>
+            <option value="nopbai">Nộp bài</option>
+            <option value="yeucau">Yêu cầu</option>
+          </select>
+        </div>
         <div class="row"><textarea id="message" placeholder="Nội dung" required></textarea></div>
         <div class="row"><button class="primary" type="submit">Gửi</button></div>
       </form>
     </div>
+
   </main>
 
-  <footer style="margin-top:22px; text-align:center; color:#000">© Nhóm 4 • Demo Web</footer>
+  <footer style="margin-top:22px;text-align:center;color:#000;">© Nhóm 4 • Demo Web</footer>
 </div>
 
 <script>
-// MEMBER DATA
+// MEMBERS
 const members=[
   {name:'Nguyễn Huỳnh Đăng Thư', cls:'12 Văn', about:'Tổng hợp nội dung, luôn chill 😎', photo:'Đăng Thư.png', link:'https://dangthunguyenhuynh43-ui.github.io/-thuw/#'},
   {name:'Trần Lê Yến Như', cls:'12 Văn', about:'Mang vibe riêng đầy năng lượng ✨', photo:'Yến Như.png', link:'https://nt4620567-byte.github.io/Nhu/'},
-  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Chuyên thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', link:'https://queanh1101.github.io/'},
-  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Chịu trách nhiệm kiểm tra bài 📝', photo:'Ngọc Châu.png', link:'https://nt4620567-byte.github.io/Ch-u-/'},
-  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tìm kiếm tài liệu & tổng hợp 💻', photo:'QV.jpg', link:'https://doquocviet52.github.io/doquocvietprofile.github.io/'}
+  {name:'Nguyễn Phạm Quế Anh', cls:'12 Văn', about:'Thiết kế slide & hình ảnh 🎨', photo:'Quế Anh.png', link:'https://queanh1101.github.io/'},
+  {name:'Nguyễn Huỳnh Ngọc Châu', cls:'12 Văn', about:'Kiểm tra bài 📝', photo:'Ngọc Châu.png', link:'https://nt4620567-byte.github.io/Ch-u-/'},
+  {name:'Đỗ Quốc Việt', cls:'12 Văn', about:'Tổng hợp tài liệu 💻', photo:'QV.jpg', link:'https://doquocviet52.github.io/doquocvietprofile.github.io/'}
 ];
-
-// Render members
-const membersEl=document.getElementById('members');
-const navMembersEl=document.getElementById('navMembers');
 members.forEach(m=>{
-  const card=document.createElement('a');
-  card.className='member-card';
-  card.href=m.link;
-  card.target='_blank';
-  card.innerHTML=`
-    ${m.photo?`<img class="mc-avatar-img" src="${m.photo}">`:`<div class="mc-avatar">${m.name[0]}</div>`}
-    <div class="mc-content">
-      <h3>${m.name}</h3>
-      <p class="mc-role">Lớp ${m.cls}</p>
-      <p class="mc-about">${m.about}</p>
-    </div>
-  `;
-  membersEl.appendChild(card);
+  const card=document.createElement("a");
+  card.className="member-card"; card.href=m.link; card.target="_blank";
+  card.innerHTML=`<img class="mc-avatar-img" src="${m.photo}">
+    <div><h3>${m.name}</h3><p>Lớp ${m.cls}</p><p>${m.about}</p></div>`;
+  document.getElementById("members").appendChild(card);
 
-  const navA=document.createElement('a');
-  navA.href=m.link;
-  navA.target='_blank';
-  navA.textContent=m.name;
-  navMembersEl.appendChild(navA);
+  const nav=document.createElement("a");
+  nav.href=m.link; nav.target="_blank"; nav.textContent=m.name;
+  document.getElementById("navMembers").appendChild(nav);
 });
 
 // LINKS
@@ -249,40 +243,29 @@ const links=[
   {title:'Bài 8: Định dạng văn bản', href:'https://dangthunguyenhuynh43-ui.github.io/BAI8/'},
   {title:'Bài 9: Tạo danh sách, bảng', href:'https://nguyenhuynhngocchau2508-ops.github.io/tin-9/'},
   {title:'Bài 10: Tạo liên kết', href:'https://nt4620567-byte.github.io/Baitin_12v/'},
-  {title:'Bài 11: Chèn tệp tin đa phương tiện và khung nội tuyến vào trang web', href:'https://queanh1101.github.io/Bai11.github.io/'},
+  {title:'Bài 11: Chèn tệp đa phương tiện', href:'https://queanh1101.github.io/Bai11.github.io/'},
   {title:'Bài 12: Tạo biểu mẫu', href:'https://doquocviet52.github.io/TInHocBai12/'}
 ];
-
-const linksEl=document.getElementById('links');
-const navLinksEl=document.getElementById('navLinks');
-
 links.forEach(l=>{
-  const a=document.createElement('a');
-  a.className='link-btn';
-  a.href=l.href;
-  a.target='_blank';
-  a.textContent=l.title;
-  linksEl.appendChild(a);
+  const a=document.createElement("a");
+  a.className="link-btn"; a.href=l.href; a.target="_blank"; a.textContent=l.title;
+  document.getElementById("links").appendChild(a);
 
-  const n=document.createElement('a');
-  n.href=l.href; 
-  n.target='_blank';
-  n.textContent=l.title;
-  navLinksEl.appendChild(n);
+  const nav=document.createElement("a");
+  nav.href=l.href; nav.target="_blank"; nav.textContent=l.title;
+  document.getElementById("navLinks").appendChild(nav);
 });
 
 // FORM
 function handleSubmit(e){
   e.preventDefault();
-  const name=document.getElementById('name').value.trim();
-  const email=document.getElementById('email').value.trim();
-  const topic=document.getElementById('topic').value;
-  const msg=document.getElementById('message').value.trim();
-  
-  if(!name||!msg){alert("Vui lòng điền tên và nội dung.");return false;}
-
-  alert(`Cảm ơn ${name}!\nChủ đề: ${topic}\nEmail: ${email||'(không có)'}\nNội dung: ${msg}`);
-  document.getElementById('contactForm').reset();
+  const name=document.getElementById("name").value.trim();
+  const email=document.getElementById("email").value.trim();
+  const topic=document.getElementById("topic").value;
+  const msg=document.getElementById("message").value.trim();
+  if(!name||!msg){alert("Vui lòng điền tên và nội dung.");return;}
+  alert(`Cảm ơn ${name}!\nChủ đề: ${topic}\nEmail: ${email||"(không có)"}\nNội dung: ${msg}`);
+  document.getElementById("contactForm").reset();
 }
 </script>
 
