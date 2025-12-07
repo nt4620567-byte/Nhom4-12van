@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
@@ -147,6 +148,32 @@
     border:none; border-radius:10px;
     font-weight:700; cursor:pointer;
   }
+
+  /* FOOTER MỚI */
+  .footer {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px 10px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    color: #e2e8f0;
+  }
+
+  .footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .footer a {
+    color: #60a5fa;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
 </style>
 </head>
 
@@ -176,7 +203,7 @@
 
 <div class="wrap">
 
-  <!-- 🌈 BANNER CHUYỂN MÀU -->
+  <!-- 🌈 BANNER -->
   <div class="banner">Báo cáo tin học</div>
 
   <main class="grid">
@@ -213,7 +240,25 @@
 
   </main>
 
-  <footer style="margin-top:22px;text-align:center;color:#000;">© Nhóm 4 • Demo Web</footer>
+  <!-- 🌟 FOOTER MỚI -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="copyright">
+        © Nhóm 4 - Demo Web.
+      </p>
+
+      <p><strong>Địa chỉ:</strong> Nguyễn Văn Cánh, Phú Hưng, Bến Tre</p>
+
+      <p><strong>Số điện thoại:</strong> 
+        <a href="tel:0275 3822 313">0275 3822 313</a>
+      </p>
+
+      <p><strong>Email:</strong> 
+        <a href="nhom4.12v@gmail.com">example@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
 </div>
 
 <script>
@@ -271,3 +316,4 @@ function handleSubmit(e){
 
 </body>
 </html>
+
